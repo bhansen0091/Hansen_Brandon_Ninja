@@ -13,18 +13,32 @@ class Ninja {
     }
 
     showStats() {
-        console.log(`Name: ${this.name} | Health: ${this.health} | Strength: ${this.strength} | Speed: ${this.speed}`);
+        console.log(`\nName: ${this.name} | Health: ${this.health} | Strength: ${this.strength} | Speed: ${this.speed}\n`);
     }
 
     drinkSake(){
         this.health += 10
     }
+}
+
+class Sensei extends Ninja{
+    constructor(name){
+        super(name);
+        this.health = 200;
+        this.strength = 10;
+        this.speed = 10
+        this.wisdom = 10;
+    }
+
+    speakWisdom(){
+        this.drinkSake();
+        console.log(`\nDo or do not, there is no try...`);
+    }
 
 }
 
-
 const ninja1 = new Ninja("Hyabusa");
-ninja1.sayName();
-ninja1.showStats();
-ninja1.drinkSake();
-ninja1.showStats();
+
+const superSensei = new Sensei("Master Splinter");
+superSensei.speakWisdom();
+superSensei.showStats();
